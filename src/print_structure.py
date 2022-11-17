@@ -42,3 +42,10 @@ def print_structure(data, deep=0):
 def main () :
     data = load_data()
     print_structure(data)
+    print(len(data['data-all']))
+    print("------")
+    for i in data['data-all'] :
+        for j in i :
+            print(j)
+        print("-------")
+main()
