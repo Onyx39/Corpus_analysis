@@ -2,9 +2,6 @@ from src.print_structure import load_data
 import plotly.express as px
 from math import inf
 import pandas as pd
-import json
-import os
-
 
 def create_list_occurancies () :
 
@@ -22,10 +19,10 @@ def create_list_occurancies () :
     n = len(data_all)
     for i in data_all :
         l = insert(l, i, data['metadata-all']['fr']['all']['kws'][i])
-        print(len(l), '    ->   ', round(10000*(len(l)-2)/n)/100, '%\n')
+        #print(len(l), '    ->   ', round(10000*(len(l)-2)/n)/100, '%\n')
     l = l[1:len(l)-1]
-    print('\n', n == len(l), '\n')
-    print_firsts(l)
+    #print('\n', n == len(l), '\n')
+    #print_firsts(l)
     return l
 
 def insert (l, name, value) :
@@ -47,14 +44,14 @@ def print_firsts (l) :
 
 def graph (l) :
     l1, l2 = [], []
-    compteur = 0
+    index = 0
     for i in l :
         if i[1] <= 50 :
             break
         else :
             l1.append(i[0])
             l2.append(i[1])
-            compteur += i[1] #compteur total = 37129
+            index += i[1] #index total = 37129
     bar_chart_data = [l1, l2]
 
     df = pd.DataFrame(bar_chart_data).transpose()
@@ -64,5 +61,5 @@ def graph (l) :
     fig = px.bar(df, x='word', y="number", title="Occurences of words")
     fig.show()
 
-    print(compteur)
-    print('Mali : ', 100*421/compteur, '%')
+    #print(index)
+    #print('Mali : ', 100*421/index, '%')

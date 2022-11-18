@@ -24,6 +24,6 @@ def month_data (data) :
     fig = px.bar(month_data_df, x='month', y="value", title="Evolution of the number of articles")
     fig.show()
 
-def main2() :
+def main_month_data() :
     data = load_data()
     month_data(data)

@@ -39,6 +39,6 @@ def print_structure(data, deep=0):
                     break
                 i += 1
 
-def main () :
+def main_print_structure () :
     data = load_data()
     print_structure(data)
