@@ -10,14 +10,14 @@ import time as t
 start = t.time()
 
 #main_print_structure()
-#main_month_data()
-#graph(create_list_occurancies())
+main_month_data()
+graph(create_list_occurancies())
 #explore_data()
 #print_all('france')
 #print_all("mali")
-#l = word_collecting()
-#word = l[rd.randint(0, len(l))]
-#print_all(word)
+l = word_collecting()
+word = l[rd.randint(0, len(l))]
+print_all(word)
 
 end = t.time()
 print("\nThe time of execution of above program is :", round(100*(end-start))/100, "s\n")
