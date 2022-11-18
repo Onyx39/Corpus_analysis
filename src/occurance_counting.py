@@ -46,7 +46,7 @@ def graph (l) :
     l1, l2 = [], []
     index = 0
     for i in l :
-        if i[1] <= 50 :
+        if i[1] <= -1 :
             break
         else :
             l1.append(i[0])

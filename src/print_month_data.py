@@ -4,13 +4,15 @@ from src.print_structure import load_data
 
 # Creer le permier bar chart
 def month_data (data) :
-    month_data = []
+    month_data = [0]*36
     for i in data["metadata-all"]["fr"]["month"]["2019"] :
-        month_data.append(i)
+        month_data[int(i)-1] = data["metadata-all"]["fr"]["month"]["2019"][i]['num']
     for i in data["metadata-all"]["fr"]["month"]["2020"] :
-        month_data.append(i)
+        month_data[int(i)+11] = data["metadata-all"]["fr"]["month"]["2020"][i]['num']
     for i in data["metadata-all"]["fr"]["month"]["2021"] :
-        month_data.append(i)
+        month_data[int(i)+23] = data["metadata-all"]["fr"]["month"]["2021"][i]['num']
+
+    print(month_data)
 
     month_legend = ["01/19", "02/19", "03/19", "04/19", "05/19", "06/19", "07/19", "08/19", "09/19", "10/19", "11/19", "12/19", 
                     "01/20", "02/20", "03/20", "04/20", "05/20", "06/20", "07/20", "08/20", "09/20", "10/20", "11/20", "12/20",

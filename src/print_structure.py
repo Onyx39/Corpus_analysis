@@ -1,12 +1,11 @@
 import json
-import os
 
 def load_data () :
     # list of data
     #files_name = [file_name for file_name in os.listdir() if '.json' in file_name]
 
     # name of the lightest file
-    file_name = 'data/topaz-data732--mali--www.fdesouche.com--20190101--20211231.json'
+    file_name = 'src/data/topaz-data732--mali--www.fdesouche.com--20190101--20211231.json'
 
     # open and load file
     f = open(file_name, 'r', encoding='utf-8')
