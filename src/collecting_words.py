@@ -1,6 +1,6 @@
 from src.print_structure import load_data
 
-def word_collecting () :
+def collecting_words () :
 
     data = load_data()
     word_list = []

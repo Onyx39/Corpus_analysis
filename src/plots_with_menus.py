@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 import pandas as pd
 
 
-def evolution_occurrences_annualy_general (nombre=None, seuil=None, pourcentage=None) :
+def evolution_occurrences_most_common_words_annualy (nombre=None, seuil=None, pourcentage=None) :
     l = create_list_occurrences()
     if nombre != None :
         l = l[:nombre]
@@ -64,7 +64,7 @@ def evolution_occurrences_annualy_general (nombre=None, seuil=None, pourcentage=
     return True
 
 
-def evolution_occurrences_monthly_general (nombre=None, seuil=None, pourcentage=None) :
+def evolution_occurrences_most_common_words_monthly (nombre=None, seuil=None, pourcentage=None) :
     l = create_list_occurrences()
     if nombre != None :
         l = l[:nombre]
@@ -130,7 +130,7 @@ def evolution_occurrences_monthly_general (nombre=None, seuil=None, pourcentage=
     plot.show()
     return True
 
-def evolution_occurrences_daily_general (nombre=None, seuil=None, pourcentage=None) :
+def evolution_occurrences_most_common_words_daily (nombre=None, seuil=None, pourcentage=None) :
     l = create_list_occurrences()
     if nombre != None :
         l = l[:nombre]
