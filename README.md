@@ -1,6 +1,7 @@
 # Corpus_analysis
-The goal of this project is to visualise some data collected in a corpus. To do so, I am using 12 json files given by my teacher. These json files contain data and metadata about the words in articles. There are not in this repository because they are too heavy. This programm in entirely coded in python and use the plotly library to show the plots.<br><br>
-<b>/!\ TW : These articles come from conspiracy sites, the data collected is therefore sensitive !</b><br><br>
+The goal of this project is to visualise some data collected in a corpus. To do so, I am using 12 json files given by my teacher. These json files contain data and metadata about the words in articles. There are not in this repository because they are too heavy. This programm in entirely coded in python and use the plotly library to show the plots.<br>
+
+<b>/!\ TW : These articles come from conspiracy sites, the data collected is therefore sensitive !</b><br>
 
 You can use this programm to analyse other files. To do so, create a 'data' folder that will contain some json files (with the same structure !). Do not forget to change the path in <i>load_data</i> in src.print_structure.py !
 
