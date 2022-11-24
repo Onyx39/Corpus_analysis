@@ -12,7 +12,7 @@ def explore_data () :
     # print('\n', l, len(l), '\n')
     # for j in l : 
     #     print(data["metadata-all"]["fr"]["month"]["2019"][j])
-    #     #index += data['metadata-all']['fr']['day']['2019']['1'][j]
+    #     index += data['metadata-all']['fr']['day']['2019']['1'][j]
     # print('index : ', index)
 
 
@@ -24,3 +24,5 @@ def explore_data () :
     #         print(j)
     #for i in data['data-all']['2019']['1']['20']:
     #    print(i)
+
+    return True

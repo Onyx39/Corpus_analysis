@@ -41,3 +41,4 @@ def print_structure(data, deep=0):
 def main_print_structure () :
     data = load_data()
     print_structure(data)
+    return True

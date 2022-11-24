@@ -3,7 +3,7 @@ import plotly.express as px
 from math import inf
 import pandas as pd
 
-def create_list_occurancies () :
+def create_list_occurrences () :
 
     data = load_data()
 
@@ -22,7 +22,7 @@ def create_list_occurancies () :
         #print(len(l), '    ->   ', round(10000*(len(l)-2)/n)/100, '%\n')
     l = l[1:len(l)-1]
     #print('\n', n == len(l), '\n')
-    #print_firsts(l)
+    #print_firsts(l, 50)
     return l
 
 def insert (l, name, value) :
@@ -37,8 +37,8 @@ def insert (l, name, value) :
     return l
 
 
-def print_firsts (l) :
-    for i in range (50) :
+def print_firsts (l, nombre) :
+    for i in range (nombre) :
         print(l[i])
 
 

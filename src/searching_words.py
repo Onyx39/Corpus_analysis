@@ -3,12 +3,12 @@ import plotly.express as px
 import pandas as pd
 
 def print_all (word) :
-    evolution_occurancies_annualy(word)
-    evolution_occurancies_monthly(word)
-    evolution_occurancies_daily(word)
+    evolution_occurrences_annualy(word)
+    evolution_occurrences_monthly(word)
+    evolution_occurrences_daily(word)
     return True
 
-def evolution_occurancies_annualy (word) :
+def evolution_occurrences_annualy (word) :
     #mettre input
     #word = 'algérie'
     data = load_data()
@@ -21,10 +21,10 @@ def evolution_occurancies_annualy (word) :
             l[index] = data['metadata-all']['fr']['year'][i]['kws'][word]
         index += 1
     #print(len(l), l)
-    graph_year(l, word)
+    year_graph(l, word)
     return True
 
-def graph_year (l, word) :
+def year_graph (l, word) :
     year_legend = ["2019", "2020", "2021"]
 
     bar_chart_data = [year_legend, l]
@@ -35,7 +35,7 @@ def graph_year (l, word) :
     fig = px.bar(month_data_df, x='year', y="value", title="Occuriency of '" + word + "'")
     fig.show()
 
-def evolution_occurancies_monthly (word) :
+def evolution_occurrences_monthly (word) :
     #mettre input
     #word = 'algérie'
     data = load_data()
@@ -50,10 +50,10 @@ def evolution_occurancies_monthly (word) :
                 l[index] = data['metadata-all']['fr']['month'][i][j]['kws'][word]
             index += 1
     #print(len(l), l)
-    graph_month(l, word)
+    month_graph(l, word)
     return True
 
-def graph_month (l, word) :
+def month_graph (l, word) :
     month_legend = ["01/19", "02/19", "03/19", "04/19", "05/19", "06/19", "07/19", "08/19", "09/19", "10/19", "11/19", "12/19", 
                     "01/20", "02/20", "03/20", "04/20", "05/20", "06/20", "07/20", "08/20", "09/20", "10/20", "11/20", "12/20",
                     "01/21", "02/21", "03/21", "04/21", "05/21", "06/21", "07/21", "08/21", "09/21", "10/21", "11/21", "12/21"]
@@ -66,7 +66,7 @@ def graph_month (l, word) :
     fig = px.bar(month_data_df, x='month', y="value", title="Occuriency of '" + word + "'")
     fig.show()
 
-def evolution_occurancies_daily (word) :
+def evolution_occurrences_daily (word) :
     #mettre input
     #word = 'algérie'
     data = load_data()
@@ -83,10 +83,10 @@ def evolution_occurancies_daily (word) :
                         l[get_day_index(i, j, k)] = data['metadata-all']['fr']['day'][i][j][k]['kws'][word]
 
     #print(len(l))
-    graph_day(l, word)
+    day_graph(l, word)
     return True
 
-def graph_day(l, word) :
+def day_graph(l, word) :
 
     bar_chart_data = [create_day_legend(), l]
 
