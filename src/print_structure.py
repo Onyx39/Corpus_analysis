@@ -1,6 +1,7 @@
 import json
 
 def load_data () :
+    
     # list of data
     #files_name = [file_name for file_name in os.listdir() if '.json' in file_name]
 

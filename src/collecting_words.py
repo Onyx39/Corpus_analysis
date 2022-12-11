@@ -15,5 +15,4 @@ def collecting_words () :
                     for l in data['metadata-all']['fr']['day'][i][j][k]['kws'] :
                         if l not in word_list :
                             word_list.append(l)
-    #print(word_list, len(word_list))
     return word_list

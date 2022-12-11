@@ -17,12 +17,12 @@ def explore_data () :
 
 
 
-    # print('num : ', data["metadata-all"]["fr"]["month"]["2019"]['num'])
-    # for i in data["metadata-all"]["fr"]["month"]["2019"] :
+    #   print('num : ', data["metadata-all"]["fr"]["month"]["2019"]['num'])
+    #   for i in data["metadata-all"]["fr"]["month"]["2019"] :
     #     print('---', i, '---')
     #     for j in data["metadata-all"]["fr"]["month"]["2019"][i] :
     #         print(j)
-    #for i in data['data-all']['2019']['1']['20']:
-    #    print(i)
+    #   for i in data['data-all']['2019']['1']['20']:
+    #       print(i)
 
     return True

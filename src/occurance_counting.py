@@ -19,18 +19,12 @@ def create_list_occurrences () :
     n = len(data_all)
     for i in data_all :
         l = insert(l, i, data['metadata-all']['fr']['all']['kws'][i])
-        #print(len(l), '    ->   ', round(10000*(len(l)-2)/n)/100, '%\n')
     l = l[1:len(l)-1]
-    #print('\n', n == len(l), '\n')
-    #print_firsts(l, 50)
     return l
 
 def insert (l, name, value) :
-    #print(l, type(l))
     for i in range(len(l)):
-        #print(l[i][1])
         if value >= l[i][1] :
-            #print('Entrer !')
             l.insert(i, [name, value])
             return l
     l.append([name, value])
@@ -60,6 +54,3 @@ def graph (l) :
 
     fig = px.bar(df, x='word', y="number", title="Occurences of words")
     fig.show()
-
-    #print(index)
-    #print('Mali : ', 100*421/index, '%')

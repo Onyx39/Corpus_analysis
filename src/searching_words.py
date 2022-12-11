@@ -2,15 +2,13 @@ from src.print_structure import load_data
 import plotly.express as px
 import pandas as pd
 
-def print_all (word) :
+def print_all_1 (word) :
     evolution_occurrences_annualy(word)
     evolution_occurrences_monthly(word)
     evolution_occurrences_daily(word)
     return True
 
 def evolution_occurrences_annualy (word) :
-    #mettre input
-    #word = 'algérie'
     data = load_data()
 
     l = [0]*3
@@ -20,7 +18,6 @@ def evolution_occurrences_annualy (word) :
         if word in data['metadata-all']['fr']['year'][i]['kws'] :
             l[index] = data['metadata-all']['fr']['year'][i]['kws'][word]
         index += 1
-    #print(len(l), l)
     year_graph(l, word)
     return True
 
@@ -36,8 +33,6 @@ def year_graph (l, word) :
     fig.show()
 
 def evolution_occurrences_monthly (word) :
-    #mettre input
-    #word = 'algérie'
     data = load_data()
 
     l = [0]*(3*12)
@@ -49,7 +44,6 @@ def evolution_occurrences_monthly (word) :
             if word in data['metadata-all']['fr']['month'][i][j]['kws'] :
                 l[index] = data['metadata-all']['fr']['month'][i][j]['kws'][word]
             index += 1
-    #print(len(l), l)
     month_graph(l, word)
     return True
 
@@ -67,8 +61,6 @@ def month_graph (l, word) :
     fig.show()
 
 def evolution_occurrences_daily (word) :
-    #mettre input
-    #word = 'algérie'
     data = load_data()
 
     l = [0]*1096
@@ -82,7 +74,6 @@ def evolution_occurrences_daily (word) :
                     if word in data['metadata-all']['fr']['day'][i][j][k]['kws'] :
                         l[get_day_index(i, j, k)] = data['metadata-all']['fr']['day'][i][j][k]['kws'][word]
 
-    #print(len(l))
     day_graph(l, word)
     return True
 

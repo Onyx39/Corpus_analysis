@@ -4,22 +4,26 @@ from src.print_structure import load_data
 import plotly.graph_objects as go
 import pandas as pd
 
+def print_all_2 (number=None, threshold=None, percentage=None) :
+    evolution_occurrences_most_common_words_annualy (number, threshold, percentage)
+    evolution_occurrences_most_common_words_monthly (number, threshold, percentage)
+    evolution_occurrences_most_common_words_daily (number, threshold, percentage)
+    return True
 
-def evolution_occurrences_most_common_words_annualy (nombre=None, seuil=None, pourcentage=None) :
+def evolution_occurrences_most_common_words_annualy (number=None, threshold=None, percentage=None) :
     l = create_list_occurrences()
-    if nombre != None :
-        l = l[:nombre]
-    elif seuil != None :
+    if number != None :
+        l = l[:number]
+    elif threshold != None :
         for i in range(len(l)) :
-            if l[i][1] < seuil :
+            if l[i][1] < threshold :
                 l = l[:i]
                 break
-    elif pourcentage != None :
-        stop = int(pourcentage/100*len(l))
+    elif percentage != None :
+        stop = int(percentage/100*len(l))
         l = l[:stop]
 
     longueur = len(l)
-    #print(longueur)
     article_data = load_data()
     years = ["2019", "2020", "2021"]
     data = []
@@ -64,22 +68,21 @@ def evolution_occurrences_most_common_words_annualy (nombre=None, seuil=None, po
     return True
 
 
-def evolution_occurrences_most_common_words_monthly (nombre=None, seuil=None, pourcentage=None) :
+def evolution_occurrences_most_common_words_monthly (number=None, threshold=None, percentage=None) :
     l = create_list_occurrences()
-    if nombre != None :
-        l = l[:nombre]
-    elif seuil != None :
+    if number != None :
+        l = l[:number]
+    elif threshold != None :
         for i in range(len(l)) :
-            if l[i][1] < seuil :
+            if l[i][1] < threshold :
                 l = l[:i]
                 break
-    elif pourcentage != None :
-        stop = int(pourcentage/100*len(l))
+    elif percentage != None :
+        stop = int(percentage/100*len(l))
         l = l[:stop]
 
 
     longueur = len(l)
-    #print(longueur)
     article_data = load_data()
     data = []
     buttons = list([dict(label="All",
@@ -130,22 +133,21 @@ def evolution_occurrences_most_common_words_monthly (nombre=None, seuil=None, po
     plot.show()
     return True
 
-def evolution_occurrences_most_common_words_daily (nombre=None, seuil=None, pourcentage=None) :
+def evolution_occurrences_most_common_words_daily (number=None, threshold=None, percentage=None) :
     l = create_list_occurrences()
-    if nombre != None :
-        l = l[:nombre]
-    elif seuil != None :
+    if number != None :
+        l = l[:number]
+    elif threshold != None :
         for i in range(len(l)) :
-            if l[i][1] < seuil :
+            if l[i][1] < threshold :
                 l = l[:i]
                 break
-    elif pourcentage != None :
-        stop = int(pourcentage/100*len(l))
+    elif percentage != None :
+        stop = int(percentage/100*len(l))
         l = l[:stop]
 
 
     longueur = len(l)
-    #print(longueur)
     article_data = load_data()
     data = []
     buttons = list([dict(label="All",
